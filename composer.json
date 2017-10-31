@@ -1,6 +1,7 @@
 {
     "name": "volumnet/parser",
     "description": "Parser",
+    "version": "1.0.0",
     "require": {
         "electrolinux/phpquery": "^0.9.6"
     },
