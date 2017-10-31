@@ -1,5 +1,5 @@
 <?php
-namespace VolumNet\TemplatesParser;
+namespace VolumNet\Parser;
 
 use \phpQueryObject;
 
@@ -18,7 +18,7 @@ abstract class Parser
     /**
      * Parsing categories menu
      * @param phpQueryObject $pq an instance of page
-     * @return array
+     * @return array<Category>
      */
     abstract public function parseCategories(phpQueryObject $pq);
 
@@ -32,19 +32,20 @@ abstract class Parser
 
 
     /**
-     * Parsing templates list
+     * Parsing list
      * @param phpQueryObject $pq an instance of page
-     * @return array
+     * @return array<Item>
      */
     abstract public function parseList(phpQueryObject $pq);
 
 
     /**
-     * Parsing templates list
+     * Parsing article
      * @param phpQueryObject $pq an instance of page
-     * @return array Properties of the template
+     * @param Item $item Item to update
+     * @return Item
      */
-    abstract public function parseOpenedPage(phpQueryObject $pq);
+    abstract public function parseOpenedPage(phpQueryObject $pq, Item $item = null);
 
 
     /**
