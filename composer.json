@@ -16,7 +16,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "VolumNet\\Parser": "src/"
+            "VolumNet\\Parser\\": "src/"
         }
     }
 }
