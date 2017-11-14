@@ -69,7 +69,7 @@ abstract class Parser
     public function canonizeText($text)
     {
         $text = trim($text);
-        $text = preg_replace('/\\s+/', ' ', $text);
+        $text = preg_replace('/\\s+/umi', ' ', $text);
         return $text;
     }
 }
