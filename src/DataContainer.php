@@ -107,6 +107,7 @@ class DataContainer
         foreach ($this->images as $key => $image) {
             $data['images'][$key] = (array)$image;
         }
+        return $data;
     }
 
 
