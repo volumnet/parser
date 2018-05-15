@@ -22,12 +22,15 @@ class UrlRetriever
      * Get page as JSON object
      * @param string $url URL to retrieve
      * @param boolean $forceArray force output as array
-     * @return \stdObject|array
+     * @return \stdObject|array|false
      */
     public function getJson($url, $forceArray = false)
     {
         $text = $this->getText($url);
-        $result = json_decode($text, $forceArray);
+        $result = false;
+        if ($text) {
+            $result = json_decode($text, $forceArray);
+        }
         return $result;
     }
 
@@ -35,12 +38,15 @@ class UrlRetriever
     /**
      * Get page as phpQuery
      * @param string $url
-     * @return phpQueryObject
+     * @return phpQueryObject|false
      */
     public function getPhpQuery($url)
     {
         $text = $this->getText($url);
-        $result = phpQuery::newDocument($text);
+        $result = false;
+        if ($text) {
+            $result = phpQuery::newDocument($text);
+        }
         return $result;
     }
 }
