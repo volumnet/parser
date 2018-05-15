@@ -162,7 +162,7 @@ class DataContainer
         if (!is_dir(dirname($filename))) {
             mkdir(dirname($filename), 0777, true);
         }
-        $json = json_encode($this->getData());
+        $json = json_encode($this->getData(), JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
         file_put_contents($filename, $json);
     }
 
