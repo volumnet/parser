@@ -139,9 +139,9 @@ class DataContainer
         }
         if (isset($data['images'])) {
             $this->images = new ArrayObject();
-            foreach ((array)$data['images'] as $key => $image) {
+            foreach ((array)$data['images'] as $key => $imageData) {
                 $image = new Image();
-                foreach ((array)$image as $key2 => $val2) {
+                foreach ((array)$imageData as $key2 => $val2) {
                     $image->$key2 = $val2;
                 }
                 $this->images[$key] = $image;
