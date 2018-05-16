@@ -129,9 +129,9 @@ class DataContainer
         }
         if (isset($data['items'])) {
             $this->items = new ArrayObject();
-            foreach ((array)$data['items'] as $key => $item) {
+            foreach ((array)$data['items'] as $key => $itemData) {
                 $item = new Item();
-                foreach ((array)$item as $key2 => $val2) {
+                foreach ((array)$itemData as $key2 => $val2) {
                     $item->$key2 = $val2;
                 }
                 $this->items[$key] = $item;
