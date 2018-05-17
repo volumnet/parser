@@ -123,7 +123,7 @@ class DataContainer
                 $cat = new Category();
                 foreach ((array)$category as $key2 => $val2) {
                     if ($key2 == 'images') {
-                        $cat->images = new ArrayObject();
+                        $cat->images = [];
                         foreach ((array)$val2 as $key3 => $imageData) {
                             $image = new Image();
                             foreach ((array)$imageData as $key4 => $val4) {
@@ -144,7 +144,7 @@ class DataContainer
                 $item = new Item();
                 foreach ((array)$itemData as $key2 => $val2) {
                     if ($key2 == 'images') {
-                        $item->images = new ArrayObject();
+                        $item->images = [];
                         foreach ((array)$val2 as $key3 => $imageData) {
                             $image = new Image();
                             foreach ((array)$imageData as $key4 => $val4) {
