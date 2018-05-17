@@ -122,7 +122,18 @@ class DataContainer
             foreach ((array)$data['categories'] as $key => $category) {
                 $cat = new Category();
                 foreach ((array)$category as $key2 => $val2) {
-                    $cat->$key2 = $val2;
+                    if ($key2 == 'images') {
+                        $cat->images = new ArrayObject();
+                        foreach ((array)$val2 as $key3 => $imageData) {
+                            $image = new Image();
+                            foreach ((array)$imageData as $key4 => $val4) {
+                                $image->$key4 = $val4;
+                            }
+                            $cat->images[$key3] = $image;
+                        }
+                    } else {
+                        $cat->$key2 = $val2;
+                    }
                 }
                 $this->categories[$key] = $cat;
             }
@@ -132,7 +143,18 @@ class DataContainer
             foreach ((array)$data['items'] as $key => $itemData) {
                 $item = new Item();
                 foreach ((array)$itemData as $key2 => $val2) {
-                    $item->$key2 = $val2;
+                    if ($key2 == 'images') {
+                        $item->images = new ArrayObject();
+                        foreach ((array)$val2 as $key3 => $imageData) {
+                            $image = new Image();
+                            foreach ((array)$imageData as $key4 => $val4) {
+                                $image->$key4 = $val4;
+                            }
+                            $item->images[$key3] = $image;
+                        }
+                    } else {
+                        $item->$key2 = $val2;
+                    }
                 }
                 $this->items[$key] = $item;
             }
